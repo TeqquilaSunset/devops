@@ -1,11 +1,20 @@
 ---
 basic_info:
-  first_name:
-  last_name:
-  birthday:
+  first_name: Vasily
+  last_name: Bistritsky
+  birthday: 30/05/2002
 
 skills:
-  - name:
-    levels: 
+  - name: git
+    levels: junior
+    labels: 
+    - programming
+    - tools
+    - vcs
+  - name: .Net/C#
+    levels: junior
     labels:
+    - programming
+    - developer
+    - tools
 ---
