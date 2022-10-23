@@ -3,14 +3,14 @@
 ## Описание
 Цель данного репозитория практическое применения навыков работы с github.
 
-В ходе выполнения данной работы будет полученны такие навыки, как:
-    - Создание репозитория
-    - Работа с ветками репозитория
-    - Создание пул реквестов
-    - Навык работы с [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
-    - Навык работы с [Markdonw](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-    - Работа с файлом метаданных `README`
-    - Ипосльзование базовых команд [git](https://git-scm.com/), а именно:
+В ходе выполнения данной работы будет получены такие навыки, как:
+- Создание репозитория
+- Работа с ветками репозитория
+- Создание пул реквестов
+- Навык работы с [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
+- Навык работы с [Markdonw](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- Работа с файлом метаданных `README`
+- Ипользование базовых команд [git](https://git-scm.com/), а именно:
 ```    
     git status
     git add
