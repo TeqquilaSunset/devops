@@ -52,8 +52,9 @@ task skill_by_level -- <level>
 Исходный код включает 2 компонента:
 
 **Основная информация(без навыков):**
-- [source/yamlbasic.yaml](src/yamlcv.yaml)
+- [source/yamlbasic.yaml](source/yamlbasic.yaml)
 
 **Навыки:**
-- [source/yamlskills.yaml](src/skills.yaml)
+- [source/yamlskills.yaml](source/yamlskills.yaml)
+
 Навык должен обязательно включать `category` и `name`.
