@@ -1,0 +1,36 @@
+---
+# This file is used to extend skills with additional fields and used
+# as source for generating "technical" list in yamlcv.yaml.
+
+categories:
+  - &lang # this is YAML Anchor
+    Languages
+  - &containers
+    Containers & Orchestration
+  - &softskil
+    soft skils
+
+skills:
+- name: python
+  level: junior
+  category: *lang # this is YAML alias
+  labels:
+    - programming
+- name: C#
+  level: junior
+  category: *lang
+  labels:
+    - programming
+- name: docker
+  level: junior
+  labels:
+    - tools
+    - technology
+  category: *containers
+- name: sociability
+  lavel: middle
+  labels:
+    -softskil
+    -communication
+  category: *softskil
+
