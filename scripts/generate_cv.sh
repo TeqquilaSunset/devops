@@ -12,7 +12,7 @@ mkdir -p $BUILD_PATH
 
 SKILLS="$SRC_PATH/yamlskills.yaml"
 YAMLCV="$SRC_PATH/yamlbasic.yaml"
-CV_YAML="$BUILD_PATH/resume.yaml"
+CV_YAML="$BUILD_PATH/$CV.yaml"
 
 echo 'cleanup'
 rm -vf $BUILD_PATH/* 2>/dev/null
