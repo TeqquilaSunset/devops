@@ -1,22 +1,60 @@
-# Модуль 2. GIT
+# Описание
+Этот репозиторий служит для хранения и работы с резюме в формате yaml.
 
-## Описание
-Цель данного репозитория практическое применения навыков работы с github.
+## Требования
+Чтобы успешно работать с данным репозиторием вам понадобиться:
 
-В ходе выполнения данной работы будет получены такие навыки, как:
-- Создание репозитория
-- Работа с ветками репозитория
-- Создание пул реквестов
-- Навык работы с [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
-- Навык работы с [Markdonw](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- Работа с файлом метаданных `README`
-- Ипользование базовых команд [git](https://git-scm.com/), а именно:
-```    
-    git status
-    git add
-    git commit
+- [yq v4](https://mikefarah.gitbook.io/yq/)
+- [yaml-cv](https://github.com/haath/yaml-cv)
+- [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf)
+- [Taskfile](https://taskfile.dev)
+- [pre-commit](https://pre-commit.com)
+
+Для корректной работы необходимо все из выше перечисленного
+
+## Проверка корректности с pre-commit
+
+Сначала нобходимо провести инцилизацию:
+```shell
+pre-commit install
 ```
 
-    и многих других
+Запуск и проверка всех фалов:
+```shell
+pre-commit run --all-fiels
+```
 
-## Если вы это читаете, скорее всего что то получилось
+## Сборка и использование
+
+Вывод всех доступных команд:
+```shell
+task --list-all
+```
+
+Сборка (создание резюме в отдельной папке "build"):
+```shell
+task build
+```
+
+Конвертация в json:
+```shell
+task json
+```
+
+Поиск по уровню владения навыком (junior, middle, senior):
+```shell
+task skill_by_level -- <level>
+```
+
+### Структура резюме
+Шаблон резюме в формате [yaml-cv](https://github.com/haath/yaml-cv)
+
+Исходный код включает 2 компонента:
+
+**Основная информация(без навыков):**
+- [source/yamlbasic.yaml](source/yamlbasic.yaml)
+
+**Навыки:**
+- [source/yamlskills.yaml](source/yamlskills.yaml)
+
+Навык должен обязательно включать `category` и `name`.
