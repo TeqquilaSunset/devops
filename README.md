@@ -10,7 +10,7 @@
 - [Taskfile](https://taskfile.dev)
 - [pre-commit](https://pre-commit.com)
 
-Если чего  то из выше перечисленного у вас нет, то могут возникнуть проблемы.
+Для корректной работы необходимо все из выше перечисленного
 
 ## Проверка корректности с pre-commit
 
@@ -31,17 +31,17 @@ pre-commit run --all-fiels
 task --list-all
 ```
 
-**Сборка (создание резюме в отдельной папке "build")**:
+Сборка (создание резюме в отдельной папке "build"):
 ```shell
 task build
 ```
 
-**Конвертация в json:**
+Конвертация в json:
 ```shell
 task json
 ```
 
-**Поиск по уровню владения навыком (junior, middle, senior):**
+Поиск по уровню владения навыком (junior, middle, senior):
 ```shell
 task skill_by_level -- <level>
 ```
@@ -50,6 +50,7 @@ task skill_by_level -- <level>
 Шаблон резюме в формате [yaml-cv](https://github.com/haath/yaml-cv)
 
 Исходный код включает 2 компонента:
+
 **Основная информация(без навыков):**
 - [source/yamlbasic.yaml](src/yamlcv.yaml)
 
