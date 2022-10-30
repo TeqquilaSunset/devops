@@ -1,0 +1,18 @@
+---
+# structure is based on yaml-cv
+# https://github.com/haath/yaml-cv
+
+details:
+  first_name: Vasiliy
+  last_name: Bystritsky
+  title: |
+    Devops - it's easy !!! probably...
+
+contacts:
+- title: vk.com
+  url: "https://vk.com/vbystr99"
+- title: mail
+  url: "sc-2005@yandex.ru"
+
+# automatically populated with data from skills.yaml
+technical: []
