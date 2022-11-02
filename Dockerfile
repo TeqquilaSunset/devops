@@ -21,9 +21,10 @@ COPY Taskfile.yaml Taskfile.yaml
 ENTRYPOINT ["task"]
 CMD ["build"]
 
+FROM builder as build
 RUN task build
 
 FROM busybox as lite
-WORKDIR /opt/app
-COPY --from=builder opt/app/build/cv.html .
-VOLUME /opt/app
+WORKDIR /opt/app/build
+COPY --from=build opt/app/build/cv.html .
+VOLUME /opt/app/build
