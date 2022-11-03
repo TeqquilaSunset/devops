@@ -9,10 +9,10 @@ RUN apt install -y \
   ruby \
   wget \
   wkhtmltopdf \
-&& rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/*
 RUN npm install -g @go-task/cli
 RUN wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 \
-&& chmod a+x /usr/local/bin/yq
+  && chmod a+x /usr/local/bin/yq
 RUN gem install yaml-cv
 COPY src src
 COPY scripts scripts
