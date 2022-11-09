@@ -31,7 +31,7 @@ CMD ["build"]
 FROM builder as build
 RUN task build
 
-FROM busybox as lite
+FROM busybox as final
 WORKDIR /opt/app/build
 COPY --from=build opt/app/build/cv.html .
 VOLUME /opt/app/build
