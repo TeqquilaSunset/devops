@@ -18,7 +18,7 @@ tasks:
   
   docker-release:
     cmds:
-      - docker build --tag cv-release:$(date +%Y%m%d%H%M%S) --target lite .
+      - docker build --tag cv-release:$(date +%Y%m%d%H%M%S) --target final .
 
   docker-builder:
     cmds:
@@ -28,3 +28,14 @@ tasks:
     cmds:
       - task: docker-builder
       - task: docker-release
+  
+  compose-run:
+    cmds:
+      - docker compose up -d
+  
+  compose-stop:
+    cmds:
+      - docker compose down -v --remove-orphans
+
+  test-ha-server:
+    while true; do curl -v http://localhost:8080 & sleep 1; done;
