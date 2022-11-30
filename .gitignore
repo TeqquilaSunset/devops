@@ -4,3 +4,5 @@
 build
 build/*
 .idea
+jenkins/backups
+jenkins/.env
