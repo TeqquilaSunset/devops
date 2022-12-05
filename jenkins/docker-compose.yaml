@@ -4,8 +4,6 @@ networks:
 volumes:
   jenkins-data:
   jenkins-jnlp-agent-data:
-  dind-socket:
-  dind-storage:
 
 services:
   jenkins-server:
@@ -32,7 +30,6 @@ services:
       - jenkins
     init: true
     environment:
-      - DOCKER_TLS_CERTDIR=
       - JENKINS_SECRET=${JENKINS_AGENT_SECRET}
       - JENKINS_URL=${JENKINS_MASTER_URL}
       - JENKINS_AGENT_NAME=${JENKINS_AGENT_NAME}

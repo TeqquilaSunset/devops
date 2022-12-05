@@ -53,6 +53,7 @@ jenkins:
             failIfWorkDirIsMissing: false
             internalDir: "remoting"
       name: "jnlp-agent"
+      remoteFS: "/var/jenkins_home/worker"
       retentionStrategy: "always"
   numExecutors: 2
   primaryView:
