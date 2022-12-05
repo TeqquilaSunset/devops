@@ -11,7 +11,7 @@ jenkins:
       dockerApi:
         connectTimeout: 60
         dockerHost:
-          uri: "unix:///dind/run/docker.sock"
+          uri: "unix:////var/run/docker.sock"
         readTimeout: 60
       exposeDockerHost: true
       name: "docker"
@@ -22,8 +22,8 @@ jenkins:
           cpuQuota: 0
           image: "jenkins/jnlp-agent-docker"
           mounts:
-          - "type=bind,src=/var/run/docker.sock,dst=/dind/run/docker.sock"
-          mountsString: "type=bind,src=/var/run/docker.sock,dst=/dind/run/docker.sock"
+          - "type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock"
+          mountsString: "type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock"
           privileged: true
           user: "root"
         labelString: "docker"
