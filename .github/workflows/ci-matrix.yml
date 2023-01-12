@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - name_image: cv-duilder
+          - name_image: cv-builder
             target: builder
           - name_image: cv-final
             target: final
