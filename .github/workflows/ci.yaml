@@ -10,6 +10,8 @@ on:
 jobs:
  build:
     runs-on: ubuntu-latest
+    env:
+      TAG: "${{ inputs.tag != '' && inputs.tag || github.ref_name }}"
     steps:
       - name: Check out Project
         uses: actions/checkout@v3
@@ -26,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-          tags: cv-builder:${{inputs.tag != '' && inputs.tag || github.ref_name}}
+          tags: cv-builder:${{ env.TAG }}
           target: builder
 
       - name: Set up Dokcer Buildx
@@ -40,11 +42,10 @@ jobs:
           push: true
           target: final
           file: ./Dockerfile
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cv-final:${{inputs.tag != '' && inputs.tag || github.ref_name}}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cv-final:${{ env.TAG }}
       
       - name: check images 
         run: docker images
 
       - name: test final
-        run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/cv-final:${{inputs.tag != '' && inputs.tag || github.ref_name}}
-
+        run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/cv-final:${{ env.TAG }}

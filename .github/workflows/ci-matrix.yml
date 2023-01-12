@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - name_image: cv-builder
+          - name_image: cv-duilder
             target: builder
           - name_image: cv-final
             target: final
@@ -22,6 +22,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          image: ${{matrix.name_image}}
-          tags: ${{inputs.tag != '' && inputs.tag || github.ref_name}}
+          push: false
+          image: ${{matrix.name_image}}:${{inputs.tag != '' && inputs.tag || github.ref_name}}
           target: ${{matrix.target}}
