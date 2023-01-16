@@ -1,6 +1,11 @@
 name: CI with matrix
 on: 
   push:
+  workflow_dispatch:
+    inputs:
+      tag:
+        default: latest
+        description: image tag
 
 jobs:
  build:
@@ -8,7 +13,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - name_image: cv-duilder
+          - name_image: cv-builder
             target: builder
           - name_image: cv-final
             target: final
@@ -22,6 +27,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          push: false
-          image: ${{matrix.name_image}}:${{inputs.tag != '' && inputs.tag || github.ref_name}}
+          image: ${{matrix.name_image}}
+          tags: ${{inputs.tag != '' && inputs.tag || github.ref_name}}
           target: ${{matrix.target}}

@@ -49,4 +49,3 @@ jobs:
 
       - name: test final
         run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/cv-final:${{ env.TAG }}
-
