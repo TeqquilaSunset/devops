@@ -47,5 +47,8 @@ jobs:
       - name: check images 
         run: docker images
 
+      -name: test builder json
+        run: docker run cv-builder:${{ env.TAG }}
+
       - name: test final
         run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/cv-final:${{ env.TAG }}
